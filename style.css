@@ -214,8 +214,8 @@ h1, h2, h3, h4, .font-serif { font-family: var(--font-heading); font-weight: 400
   max-width: 130%;
   object-fit: contain; 
   object-position: bottom center;
-  -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
-  mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
   filter: drop-shadow(-20px 0 60px rgba(0,255,255,0.08));
 }
 .photo-badge {
