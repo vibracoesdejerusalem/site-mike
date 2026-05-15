@@ -395,19 +395,25 @@ h1, h2, h3, h4, .font-serif { font-family: var(--font-heading); font-weight: 400
 .module-block-premium {
   position: relative;
   width: 100%;
-  max-width: 1100px;
-  margin: 0 auto 100px;
+  max-width: none;
+  margin: 0 0 0; /* Removing bottom margin to handle it per block if needed, or keeping it uniform */
   background: #020203;
   overflow: hidden;
   border-top: 1px solid rgba(0, 255, 255, 0.4); /* Contrast with the "ceiling" */
   box-shadow: 0 50px 100px rgba(0,0,0,0.8);
 }
 
+/* Specific spacing between modules when they bleed */
+.modules-bleed-container .module-block-premium:not(:last-child) {
+  margin-bottom: 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
 .module-bg-image {
   position: absolute;
   top: 0;
   right: 0;
-  width: 60%; /* Occupies the right side */
+  width: 60%; /* Bleeds to the right edge */
   height: 100%;
   z-index: 1;
 }
@@ -429,7 +435,7 @@ h1, h2, h3, h4, .font-serif { font-family: var(--font-heading); font-weight: 400
   background: linear-gradient(90deg, 
     #020203 0%, 
     #020203 40%, 
-    rgba(2, 2, 3, 0.8) 50%, 
+    rgba(2, 2, 3, 0.8) 55%, 
     rgba(2, 2, 3, 0) 100%
   );
 }
@@ -439,14 +445,20 @@ h1, h2, h3, h4, .font-serif { font-family: var(--font-heading); font-weight: 400
   z-index: 3;
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
-  min-height: 550px;
+  min-height: 600px;
+  max-width: 1200px; /* Centered content alignment */
+  margin: 0 auto;
 }
 
 .module-text-side {
-  padding: 64px 48px;
+  padding: 80px 24px 80px 0; /* Padding left 0 because it's centered by content-premium margin auto */
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+@media (max-width: 1248px) {
+  .module-text-side { padding-left: 24px; }
 }
 
 .module-text-side .module-tag {
