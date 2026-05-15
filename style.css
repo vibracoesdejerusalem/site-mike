@@ -422,7 +422,7 @@ h1, h2, h3, h4, .font-serif { font-family: var(--font-heading); font-weight: 400
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: right center; /* Focus on the right side to prevent cutting people */
+  object-position: center; /* Default safe position */
 }
 
 .module-overlay-grad {
