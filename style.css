@@ -18,7 +18,7 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 body {
   background: var(--color-deep);
   background-image: radial-gradient(circle at top right, #0a0a14, var(--color-deep) 60%),
@@ -227,6 +227,7 @@ h1, h2, h3, h4, .font-serif { font-family: var(--font-heading); font-weight: 400
   background: #f8fafc;
   color: var(--color-text-dark);
   padding: 100px 0;
+  overflow: hidden;
 }
 .about-label {
   display: flex; align-items: center; gap: 16px;
@@ -350,7 +351,7 @@ h1, h2, h3, h4, .font-serif { font-family: var(--font-heading); font-weight: 400
 .del-card--featured .del-title { font-weight: 600; }
 .del-card--featured .del-num { color: var(--color-base); font-weight: 700; }
 
-.modules { padding: var(--spacing-section) 0; border-top: 1px solid rgba(255,255,255,0.05); }
+.modules { padding: var(--spacing-section) 0; border-top: 1px solid rgba(255,255,255,0.05); overflow: hidden; }
 .modules-title { text-align: center; margin-bottom: 100px; }
 .module-block { display: grid; grid-template-columns: 100px 1fr; gap: 40px; max-width: 900px; margin: 0 auto 80px; }
 .module-index { display: flex; flex-direction: column; align-items: center; gap: 24px; }
@@ -499,7 +500,15 @@ h1, h2, h3, h4, .font-serif { font-family: var(--font-heading); font-weight: 400
   .module-bg-image {
     position: relative;
     width: 100%;
-    height: 300px;
+    height: 320px;
+  }
+  
+  /* Highlighting the right side (subjects) on mobile for the podcast */
+  .modules-bleed-container .module-block-premium:first-child .module-bg-image {
+    height: 480px;
+  }
+  .modules-bleed-container .module-block-premium:first-child .module-bg-image img {
+    object-position: 85% center;
   }
   
   .module-overlay-grad {
