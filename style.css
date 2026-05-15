@@ -434,9 +434,9 @@ h1, h2, h3, h4, .font-serif { font-family: var(--font-heading); font-weight: 400
   z-index: 2;
   background: linear-gradient(90deg, 
     #020203 0%, 
-    #020203 40%, 
-    rgba(2, 2, 3, 0.8) 55%, 
-    rgba(2, 2, 3, 0) 100%
+    #020203 35%, 
+    rgba(2, 2, 3, 0.7) 50%, 
+    rgba(2, 2, 3, 0) 85%
   );
 }
 
